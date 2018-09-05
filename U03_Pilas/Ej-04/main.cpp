@@ -1,7 +1,17 @@
 #include <iostream>
 #include "../Pila/Pila.h"
+using namespace std;
 
 int main() {
-    std::cout << "Ejercicio 03/04\n" << std::endl;
+    Pila<char> pila;
+    string operacion;
+
+    cout<<"ingrese operacion"<<endl;
+    cin>>operacion;
+
+    for (int i = 0; i<operacion.length(); i++){
+                
+    }
+
     return 0;
 }

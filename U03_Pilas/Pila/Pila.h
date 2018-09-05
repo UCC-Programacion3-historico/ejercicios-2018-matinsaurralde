@@ -1,6 +1,9 @@
 #ifndef LISTA_H
 #define LISTA_H
 
+#include "/home/alumno/Escritorio/ejercicios-2018-matinsaurralde/U02_Listas/Lista/Nodo.h"
+
+
 /**
  * Clase que implementa una Pila generica, ya que puede
  * almacenar cualquier tipo de dato T
@@ -9,6 +12,7 @@
 template<class T>
 class Pila {
 private:
+    Nodo <T> *tope;
 
 public:
     Pila();
@@ -20,6 +24,8 @@ public:
     T pop();
 
     bool esVacia();
+
+    T peek();
 };
 
 
@@ -28,7 +34,9 @@ public:
  * @tparam T
  */
 template<class T>
-Pila<T>::Pila() {}
+Pila<T>::Pila() {
+    tope = nullptr;
+}
 
 
 /**
@@ -37,7 +45,17 @@ Pila<T>::Pila() {}
  * @tparam T
  */
 template<class T>
-Pila<T>::~Pila() {}
+
+Pila<T>::~Pila() {
+    Nodo<T> *aux = tope;
+
+    while (aux != nullptr){
+        tope=aux->getNext();
+        delete aux;
+        aux=tope;
+    }
+
+}
 
 
 /**
@@ -46,7 +64,13 @@ Pila<T>::~Pila() {}
  * @param dato  dato a insertar
  */
 template<class T>
-void Pila<T>::push(T dato) {}
+void Pila<T>::push(T dato) {
+    auto *nuevo = new Nodo <T>(); //creo nuevo nodo
+    nuevo->setNext(tope);
+    nuevo->setDato(dato);
+    tope = nuevo;
+
+}
 
 
 /**
@@ -55,7 +79,28 @@ void Pila<T>::push(T dato) {}
  * @return dato almacenado en el nodo
  */
 template<class T>
-T Pila<T>::pop() {}
+
+T Pila<T>::pop() {
+    if(tope == nullptr)
+        throw 1;
+
+    T dato = tope->getDato();
+    Nodo<T> *aux = tope; //aca guardo mi nodo que voy a eliminar
+    tope=tope->getNext();
+    delete aux; //pq use new dahh
+    return dato;
+
+}
+template<class T>
+ //pq tengo que pponer esooooooooooo!!!!!!!!1
+T Pila<T>::peek(){
+    if(tope == nullptr)
+        throw 1;
+
+    return tope->getDato();
+
+}
+
 
 /**
  * Responde si la pila se encuentra Vacía
@@ -64,7 +109,7 @@ T Pila<T>::pop() {}
  */
 template<class T>
 bool Pila<T>::esVacia() {
-
+    return tope == nullptr;
 }
 
 #endif //LISTA_H

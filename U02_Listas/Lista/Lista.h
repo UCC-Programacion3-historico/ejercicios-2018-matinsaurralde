@@ -1,7 +1,7 @@
 #ifndef LISTA_H
 #define LISTA_H
 
-#include "nodo.h"
+#include "Nodo.h"
 
 /**
  * Clase que implementa una Lista Enlasada generica, ya que puede
@@ -11,7 +11,7 @@
 template<class T>
 class Lista {
 private:
-    nodo<T> *inicio;
+    Nodo<T> *inicio;
 public:
     Lista();
 
@@ -84,7 +84,7 @@ bool Lista<T>::esVacia() { return inicio == nullptr; }
 template<class T>
 int Lista<T>::getTamanio() {
     int cant = 0;
-    nodo<T> *aux = inicio;
+    Nodo<T> *aux = inicio;
 
     while (aux != nullptr) {
         cant++;
@@ -102,8 +102,8 @@ int Lista<T>::getTamanio() {
  */
 template<class T>
 void Lista<T>::insertar(unsigned int pos, T dato) {
-    auto *nuevo = new nodo<T>();
-    nodo<T> *aux = inicio;
+    auto *nuevo = new Nodo<T>();
+    Nodo<T> *aux = inicio;
     int pos_actual = 0;
 
     nuevo->setDato(dato);
@@ -134,7 +134,7 @@ void Lista<T>::insertar(unsigned int pos, T dato) {
  */
 template<class T>
 void Lista<T>::insertarPrimero(T dato) {
-    auto *nuevo = new nodo<T>();
+    auto *nuevo = new Nodo<T>();
     nuevo->setDato(dato);
 
     nuevo->setNext(inicio);
@@ -149,7 +149,7 @@ void Lista<T>::insertarPrimero(T dato) {
  */
 template<class T>
 void Lista<T>::insertarUltimo(T dato) {
-    auto *nuevo = new nodo<T>();
+    auto *nuevo = new Nodo<T>();
     auto *aux = inicio;
 
     nuevo->setDato(dato);
@@ -182,11 +182,11 @@ void Lista<T>::remover(unsigned int pos) {
         aux = aux->getNext();
     }
 
-    // Error no extiste el nodo (me pase)
+    // Error no extiste el Nodo (me pase)
     if (aux == nullptr)
         throw 1;
 
-    if (pos == 0) { // si elimino el primer nodo.
+    if (pos == 0) { // si elimino el primer Nodo.
         inicio = inicio->getNext();
         delete aux;
     } else { // todos los otros casos.
