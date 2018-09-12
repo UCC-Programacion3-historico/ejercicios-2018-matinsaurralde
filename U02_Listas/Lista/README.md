@@ -7,7 +7,7 @@ otro, en la que cada elemento se conecta al siguiente elemento por un “enlace�
 consiste en construir una lista cuyos elementos, llamados nodos, se componen de dos partes
 (campos): la primera parte contiene la información y es, por consiguiente, un valor de un tipo
 genérico (denominado Dato, TipoElemento, Info, etc.), y la segunda parte es un enlace que
-apunta al siguiente nodo de la lista.
+apunta al siguiente Nodo de la lista.
 
 ## Clase
 

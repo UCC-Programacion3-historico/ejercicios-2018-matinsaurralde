@@ -65,7 +65,7 @@ Pila<T>::~Pila() {
  */
 template<class T>
 void Pila<T>::push(T dato) {
-    auto *nuevo = new Nodo <T>(); //creo nuevo nodo
+    auto *nuevo = new Nodo <T>(); //creo nuevo Nodo
     nuevo->setNext(tope);
     nuevo->setDato(dato);
     tope = nuevo;
@@ -85,7 +85,7 @@ T Pila<T>::pop() {
         throw 1;
 
     T dato = tope->getDato();
-    Nodo<T> *aux = tope; //aca guardo mi nodo que voy a eliminar
+    Nodo<T> *aux = tope; //aca guardo mi Nodo que voy a eliminar
     tope=tope->getNext();
     delete aux; //pq use new dahh
     return dato;

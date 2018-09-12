@@ -28,5 +28,5 @@ Escriba la clase CircList para implementar una lista circular
 
 
 ##    Ejercicio N°6. 
-Agregue el método: insertAfter2(int oldValue, int n, int newValue) que inserte un nodo
+Agregue el método: insertAfter2(int oldValue, int n, int newValue) que inserte un Nodo
 con el valor newValue después de la enésima ocurrencia de oldValue.

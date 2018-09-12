@@ -1,10 +1,10 @@
 #include "gtest/gtest.h"
 #include "../../U04_Colas/Cola/Cola.h"
 
-Cola<int> *colaTest;
+fh<int> *colaTest;
 
 TEST(U04_Colas, nuevaColaVacia) {
-    colaTest = new Cola<int>();
+    colaTest = new fh<int>();
     EXPECT_EQ(colaTest->esVacia(), true);
 }
 

@@ -20,9 +20,9 @@ Ejemplos de palidromo:
 
 
 ##    Ejercicio N°3. 
-Agregue un método a la clase cola para insertar un nodo según un valor entero de prioridad.
-El valor 0 es la máxima prioridad. Este método debe colocar el nodo lo mas próximo al frente
-de la cola, pero atrás del ultimo nodo con la misma prioridad.
+Agregue un método a la clase cola para insertar un Nodo según un valor entero de prioridad.
+El valor 0 es la máxima prioridad. Este método debe colocar el Nodo lo mas próximo al frente
+de la cola, pero atrás del ultimo Nodo con la misma prioridad.
 
 ##    Ejercicio N°4. 
 En un supermercado, se tiene sólo una caja habilitada para que los clientes puedan pagar 

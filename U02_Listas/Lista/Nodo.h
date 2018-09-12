@@ -16,7 +16,16 @@ private:
     Nodo *next;
     
 public:
-    
+
+    Nodo (T d){
+     dato=d;
+     next= nullptr;
+
+    }
+
+    Nodo
+
+
     T getDato() const {
         return dato;
     }
