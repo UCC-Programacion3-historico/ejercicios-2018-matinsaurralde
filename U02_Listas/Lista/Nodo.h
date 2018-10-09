@@ -1,49 +1,33 @@
 //
-// Created by alumno on 29/08/18.
+// Created by martin on 29/08/18.
 //
 
-#ifndef PROGRAMACION3_nodo_H
-#define PROGRAMACION3_nodo_H
+#ifndef PROGRAMACION3_NODO_H
+#define PROGRAMACION3_NODO_H
 
-template <class T>
+template<class T>
 
-class Nodo {
-    
+class nodo {
 private:
-    
     T dato;
-    
-    Nodo *next;
-    
+    nodo *next;
 public:
-
-    Nodo (T d){
-     dato=d;
-     next= nullptr;
-
-    }
-
-    Nodo
-
-
     T getDato() const {
         return dato;
     }
 
     void setDato(T dato) {
-        Nodo::dato = dato;
+        nodo::dato = dato;
     }
 
-    Nodo *getNext() const {
+    nodo *getNext() const {
         return next;
     }
 
-    void setNext(Nodo *next) {
-        Nodo::next = next;
+    void setNext(nodo *next) {
+        nodo::next = next;
     }
-    
 };
 
 
-
-#endif //PROGRAMACION3_nodo_H
+#endif //PROGRAMACION3_NODO_H

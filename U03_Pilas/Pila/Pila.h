@@ -1,7 +1,7 @@
 #ifndef LISTA_H
 #define LISTA_H
 
-#include "/home/alumno/Escritorio/ejercicios-2018-matinsaurralde/U02_Listas/Lista/Nodo.h"
+#include "/Users/matiasinsauarralde/Google Drive/UCC/Programacion3/Github/ejercicios-2018-matinsaurralde/U02_Listas/Lista/nodo.h"
 
 
 /**
@@ -12,7 +12,7 @@
 template<class T>
 class Pila {
 private:
-    Nodo <T> *tope;
+    nodo <T> *tope;
 
 public:
     Pila();
@@ -47,7 +47,7 @@ Pila<T>::Pila() {
 template<class T>
 
 Pila<T>::~Pila() {
-    Nodo<T> *aux = tope;
+    nodo<T> *aux = tope;
 
     while (aux != nullptr){
         tope=aux->getNext();
@@ -65,7 +65,7 @@ Pila<T>::~Pila() {
  */
 template<class T>
 void Pila<T>::push(T dato) {
-    auto *nuevo = new Nodo <T>(); //creo nuevo Nodo
+    auto *nuevo = new nodo <T>(); //creo nuevo nodo
     nuevo->setNext(tope);
     nuevo->setDato(dato);
     tope = nuevo;
@@ -85,7 +85,7 @@ T Pila<T>::pop() {
         throw 1;
 
     T dato = tope->getDato();
-    Nodo<T> *aux = tope; //aca guardo mi Nodo que voy a eliminar
+    nodo<T> *aux = tope; //aca guardo mi nodo que voy a eliminar
     tope=tope->getNext();
     delete aux; //pq use new dahh
     return dato;

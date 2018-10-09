@@ -9,11 +9,9 @@ int main() {
     Pila<char> pila;
     cout<<"ingrese palabra: "<<endl;
 
-
         cin>>caract;
         for (int i= 0; i<caract.length();i++)
         pila.push(caract[i]);
-
 
 
     while (!pila.esVacia()){

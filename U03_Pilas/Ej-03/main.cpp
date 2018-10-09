@@ -11,6 +11,7 @@ int main() {
     for (int i = 0 ; i <= 5 ; i++){
         pila1.push(i);
     }
+
 cout<<pila1.peek()<<endl;
 
     return 0;
