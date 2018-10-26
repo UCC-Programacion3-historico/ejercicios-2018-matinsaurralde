@@ -3,19 +3,19 @@
 #define PROGRAMACION3_NODO2_H
 
 template<class T>
-class Nodo {
+class nodo {
 private:
     T dato;
-    Nodo *next;
+    nodo *next;
     int prioridad;
 public:
-    Nodo(T d, int p) {
+    nodo(T d, int p) {
         dato = d;
         next = nullptr;
         prioridad = p;
     }
 
-    Nodo(T d, Nodo *n, int p) {
+    nodo(T d, nodo *n, int p) {
         dato = d;
         next = n;
         prioridad = p;
@@ -33,11 +33,11 @@ public:
         dato = d;
     }
 
-    Nodo *getNext() {
+    nodo *getNext() {
         return next;
     }
 
-    void setNext(Nodo *n) {
+    void setNext(nodo *n) {
         next = n;
     }
 };

@@ -1,22 +1,21 @@
 #ifndef COLA_H
 #define COLA_H
+#include "/Users/matiasinsauarralde/Google Drive/UCC/Programacion3/Github/ejercicios-2018-matinsaurralde/U04_Colas/Cola/nodo.h"
 
 /**
  * Clase que implementa una Cola generica, ya que puede
  * almacenar cualquier tipo de dato T
  * @tparam T cualquier tipo de dato
  */
-
-#include "Nodo.h"
 template<class T>
-class Cola {
+class ColaPrioridades {
 private:
-    Nodo<T> *entrada ;
-    Nodo<T> *salida ;
+    nodo<T> *entrada;
+    nodo<T> *salida;
 public:
-    Cola();
+    ColaPrioridades();
 
-    ~Cola();
+    ~ColaPrioridades();
 
     void encolar(T dato);
 
@@ -31,10 +30,9 @@ public:
  * @tparam T
  */
 template<class T>
-
-Cola<T>::Cola() {
-    entrada= nullptr ;
-    salida= nullptr ;
+ColaPrioridades<T>::ColaPrioridades() {
+    entrada = nullptr;
+    salida = nullptr;
 }
 
 
@@ -44,7 +42,7 @@ Cola<T>::Cola() {
  * @tparam T
  */
 template<class T>
-Cola<T>::~Cola() {}
+ColaPrioridades<T>::~ColaPrioridades() {}
 
 
 /**
@@ -53,12 +51,13 @@ Cola<T>::~Cola() {}
  * @param dato  dato a insertar
  */
 template<class T>
-void Cola<T>::encolar(T dato) {
-    auto *nuevo= new Nodo<T>(dato, nullptr) ;
-    if (entrada!= nullptr)              // entra nuevo y cambia el entrada
-        entrada->setNext(nuevo) ;
+void ColaPrioridades<T>::encolar(T dato) {
+    auto *nuevo = new nodo<T>(dato, nullptr); //hago un nuevo nodo con el dato que apunte a null prque va al ultimo
+    if(entrada != nullptr)
+        entrada->setNext(nuevo); // entrada apunta al nodo nuevo
     else
-        entrada = nuevo ;   // El Nodo que se inserte tenga el nombre de entrada y salida
+        salida = nuevo;
+    entrada = nuevo; // nuevo ahora es entrada
 }
 
 
@@ -68,18 +67,18 @@ void Cola<T>::encolar(T dato) {
  * @return dato almacenado en el nodo
  */
 template<class T>
-T Cola<T>::desencolar() {
-    if (salida == nullptr)
-        throw 1 ;
-    T dato = salida->getDato() ;
-    Nodo<T> *salida_anterior = salida ;
-    salida = salida->getNext() ;
+T ColaPrioridades<T>::desencolar() {
+    if(salida == nullptr)
+        throw 1;
 
-    if (salida == nullptr)
-        entrada = nullptr ;
+    T data = salida->getDato();
+    nodo<T> *salida_anterior = salida;
+    salida = salida->getNext();
+    //si cuando actualizo salida, este se hace nulo, la entrada tambien.(cola vacia)
+    if(salida == nullptr)
+        entrada = nullptr;
 
-    delete salida_anterior ; // Borra Nodo y devuelve el dato del anterior (el borrado
-    return dato ;
+    return data;
 }
 
 /**
@@ -88,8 +87,8 @@ T Cola<T>::desencolar() {
  * @return
  */
 template<class T>
-bool Cola<T>::esVacia() {
-    return salida == nullptr ;
+bool ColaPrioridades<T>::esVacia() {
+    return salida == nullptr;
 }
 
 #endif //LISTA_H

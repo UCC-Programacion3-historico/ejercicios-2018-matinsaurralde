@@ -7,7 +7,7 @@ int main() {
     Pila<int> pila1;
     Pila<int> pila2;
 
-    for (int i = 5 ; i >= 0 ; i--){
+    for (int i =0 ; i <= 5 ; i++){
         pila1.push(i);
     }
 

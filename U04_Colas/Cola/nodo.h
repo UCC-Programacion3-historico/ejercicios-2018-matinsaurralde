@@ -5,16 +5,16 @@
 #define PROGRAMACION3_NODO_H
 
 template<class T>
-class Nodo {
+class nodo {
 private:
     T dato;
-    Nodo *next;
+    nodo *next;
 public:
-    Nodo(T d) {
+    nodo(T d) {
         dato = d;
         next = nullptr;
     }
-    Nodo(T d, Nodo *n) {
+    nodo(T d, nodo *n) {
         dato = d;
         next = n;
     }
@@ -31,11 +31,11 @@ public:
         dato = d;
     }
 
-    Nodo *getNext() {
+    nodo *getNext() {
         return next;
     }
 
-    void setNext(Nodo *n) {
+    void setNext(nodo *n) {
         next = n;
     }
 };

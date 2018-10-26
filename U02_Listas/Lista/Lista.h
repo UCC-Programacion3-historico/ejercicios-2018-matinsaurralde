@@ -29,6 +29,8 @@ public:
 
     void insertarPrimero(T dato);
 
+    void moverPri(int n);
+
     void insertarUltimo(T dato);
 
     void remover(unsigned int pos);
@@ -45,6 +47,36 @@ public:
  * Constructor de la clase Lista
  * @tparam T
  */
+template<class T>
+void Lista<T>::moverPri(int n) {  //es lo mismo que insertar que hicimos en clase pero cambiado
+    auto *nuevo = new nodo<T>();
+    nodo<T> *aux = inicio;
+    int pos_actual = 0;
+
+    nuevo->setDato(inicio->getDato());
+
+    if (n == 0) {
+        nuevo->setNext(inicio);
+        inicio = nuevo;
+        return;
+    }
+
+    while (pos_actual < n - 1 && aux != nullptr) {
+        pos_actual++;
+        aux = aux->getNext();
+    }
+
+    if (aux == nullptr)
+        throw 1;
+
+    nuevo->setNext(aux->getNext());
+    aux->setNext(nuevo);
+    remover(0); //remuevo el primer elemento pq ya movi su dato a la posicion n
+}
+
+
+
+
 template<class T>
 Lista<T>::Lista() {
     inicio = nullptr;
